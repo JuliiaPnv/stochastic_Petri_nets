@@ -514,16 +514,16 @@ int main() {
 				reset(duplicate, all_incident);	//обнуляем дубликат текущих состояний
 			}
 		}
+		cout << "\nВычисление веса слова в ССП:" << endl;
+		result_Petri = sum(vertex_Petri, state, all_incident);
+		cout << "\nВес слова в ССП: m(w) = " << result_Petri << endl;
+
 		cout << "\nПромежуточные вычисления в вероятностном автомате:" << endl;
 		cout << "P(w):" << endl;
 		print_matrix(multiplied_matrices, N);
 		print_p(p, N);
 		result_machine = multi(multiplied_matrices, p, e, N);
 		cout << "\nВес слова в вероятностном автомате: m(w) = " << result_machine << endl;
-
-		cout << "\nВычисление веса слова в ССП:" << endl;
-		result_Petri = sum(vertex_Petri,state,all_incident);
-		cout << "\nВес слова в ССП: m(w) = " << result_Petri << endl;
 
 		cout << "\nВвести новое слово? (1 - да, 0 - завершить работу программы)" << endl;
 		cin >> end;
